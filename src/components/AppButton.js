@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
     },
     disabled: {opacity: .6},
     text:{color: '#fff', fontSize: 16, fontWeight: '700'}
-})
+});
