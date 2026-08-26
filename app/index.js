@@ -9,38 +9,52 @@ export default function Login() {
     const [loading, setloading] = useState(false);
 
     return (
-        <KeyboardAvoidingView style={style.container}
-        behavior={Platform.OS==='ios'?'padding':undefined}>
-        <View>
-            <Text style={styles.title}> Meu bolso </Text>
-            <Text style={styles.subtitle}>Controle suas finanças</Text>
-            <AppInput label="E-mail"
-                placeholder="Digite seu e-mail"
-                //recusa letras maiusculas (autocapitalize)
-                autoCapitalize="none" keyboardType="email-address"
-                value={email} onChangeText={setEmail}
-            />
-            <AppInput label="Senha"
-                placeholder="Digite sua senha"
-                secureTextEntry
-                value={password} onChangeText={setPassword}
-            />
-            <AppButton
-                title="Entrar"
-                loading={loading}
-            />
-            <TouchableOpacity onPress={()=>router.push('/register')}><Text style={styles.link}>Criar nova conta</Text>
-            </TouchableOpacity>
+        <KeyboardAvoidingView style={styles.container}
+            behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+            <View>
+                <Text style={styles.title}> Meu bolso </Text>
+                <Text style={styles.subtitle}>Controle suas finanças</Text>
+                <AppInput label="E-mail"
+                    placeholder="Digite seu e-mail"
+                    //recusa letras maiusculas (autocapitalize)
+                    autoCapitalize="none" keyboardType="email-address"
+                    value={email} onChangeText={setEmail}
+                />
+                <AppInput label="Senha"
+                    placeholder="Digite sua senha"
+                    secureTextEntry
+                    value={password} onChangeText={setPassword}
+                />
+                <AppButton
+                    title="Entrar"
+                    loading={loading}
+                />
+                <TouchableOpacity onPress={() => router.push('/register')}><Text style={styles.link}>Criar nova conta</Text>
+                </TouchableOpacity>
 
 
-        </View>
+            </View>
         </KeyboardAvoidingView>
     );
 }
 
 const styles = StyleSheet.create({
-    title:{fontSize:34, fontWeight:'900', color:'#2f3640', textAlign:'center'},
-    subtitle:{color:'#7f8c8d', textAlign: 'center', marginTop: 8, marginBottom: 32,
+    title: {
+        fontSize: 34,
+        fontWeight: '900',
+        color: '#2f3640',
+        textAlign: 'center'
     },
-    link:{color:'#008f22', textAlign:'center', marginTop: 20, fontWeight:'700'}
+    subtitle: {
+        color: '#7f8c8d',
+        textAlign: 'center',
+        marginTop: 8,
+        marginBottom: 32
+    },
+    link: {
+        color: '#008f22',
+        textAlign: 'center',
+        marginTop: 20,
+        fontWeight: '700'
+    }
 });
