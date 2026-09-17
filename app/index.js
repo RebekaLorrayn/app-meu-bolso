@@ -29,7 +29,8 @@ export default function Login() {
                     title="Entrar"
                     loading={loading}
                 />
-                <TouchableOpacity onPress={() => router.push('/register')}><Text style={styles.link}>Criar nova conta</Text>
+                <TouchableOpacity onPress={() => router.push('/register')}>
+                    <Text style={styles.link}>Criar nova conta</Text>
                 </TouchableOpacity>
 
 
